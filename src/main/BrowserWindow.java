@@ -24,28 +24,22 @@ public class BrowserWindow {
 		
 		// build search bar
 		searchBar = new JTextField();
-		searchBar.setPreferredSize(new Dimension(frame.getWidth() - 100, 60)); // dynamically resize textfield relative to frame's size
+		searchBar.setPreferredSize(new Dimension(500, 60)); 
 		
 		// build button
 		goButton = new JButton("GO"); // create new button with some default text
 		goButton.setPreferredSize(new Dimension(80, 60));
 		
 		// build displayPane
-		displayPane = new JEditorPane(); // dynamically set width and height
+		displayPane = new JEditorPane(); 
 		displayPane.setContentType("text/html");
-		displayPane.setPreferredSize(new Dimension(frame.getWidth() - 20, frame.getHeight() - 150));
+		displayPane.setPreferredSize(new Dimension(500, 500));
 		
 		// use SpringLayout to position the GUI components
 		// create rules for adding stuff to the frame
 		
-		// put the go button next to the search bar in a cheeky manner
-		layoutManager.putConstraint(SpringLayout.WEST, goButton, 5, SpringLayout.EAST, searchBar);
-
-		// the searchbar will always be 5 px away from the edge of the window
+		// put 5 px of room from left edge of search bar to left edge of frame
 		layoutManager.putConstraint(SpringLayout.WEST, searchBar, 5, SpringLayout.WEST, frame);
-
-		layoutManager.putConstraint(SpringLayout.NORTH, displayPane, 5, SpringLayout.SOUTH, searchBar);
-
 		
 		
 		// add the components to the frame
